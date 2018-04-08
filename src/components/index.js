@@ -1,4 +1,4 @@
-import Child from 'child.vue'
+import Child from "./child.vue";
 
 export {
     Child
