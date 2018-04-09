@@ -8,7 +8,6 @@ function resolve(dir) {
 }
 module.exports = {
     // mode: 'production',
-    // entry: './src/main.js',
     output: {
         path: './dist',
         filename: 'app.bundle.js'

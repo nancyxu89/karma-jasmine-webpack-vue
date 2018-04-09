@@ -1,6 +1,6 @@
 // Karma configuration
-// Generated on Tue Apr 03 2018 17:51:45 GMT+0800 (CST)
-// var webpack = require('webpack')
+// Generated on Mon Apr 09 2018 18:00:16 GMT+0800 (CST)
+
 module.exports = function (config) {
     config.set({
 
@@ -14,8 +14,8 @@ module.exports = function (config) {
 
 
         // list of files / patterns to load in the browser
-        files: ['test/unit/**/*.spec.js','test/unit/*.spec.js'],
-        // files: ['src/js/*.js', 'test/*.spec.js', 'test/unit/*.spec.js'],
+        files: ['./specs/*.spec.js'
+        ],
 
 
         // list of files / patterns to exclude
@@ -25,39 +25,18 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            // 'src/js/*.js': ['coverage'],
-            'test/unit/*.spec.js': ['webpack', 'sourcemap'],
-            'test/unit/**/*.spec.js': ['webpack', 'sourcemap']
-            // 'src/main.js': ['webpack', 'coverage']
-            // 'test/unit/*.spec.js': ['webpack']
+            './specs/*.spec.js': ['webpack']
         },
-
         // optionally, configure the reporter
         coverageReporter: {
             type: 'html',
             dir: 'coverage/'
         },
-        // coverageReporter: {
-        //     // specify a common output directory
-        //     dir: 'coverage',
-        //     reporters: [
-        //         // reporters not supporting the `file` property
-        //         {type: 'html', subdir: 'report-html'},
-        //         // {type: 'lcov', subdir: 'report-lcov'},
-        //         // // reporters supporting the `file` property, use `subdir` to directly
-        //         // // output them in the `dir` directory
-        //         // {type: 'cobertura', subdir: '.', file: 'cobertura.txt'},
-        //         // {type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt'},
-        //         // {type: 'teamcity', subdir: '.', file: 'teamcity.txt'},
-        //         // {type: 'text', subdir: '.', file: 'text.txt'},
-        //         // {type: 'text-summary', subdir: '.', file: 'text-summary.txt'},
-        //     ]
-        // },
+
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['progress', 'coverage'],
-        // reporters: ['progress', 'coverage-istanbul'],//Icov-report
 
 
         // web server port
@@ -89,6 +68,6 @@ module.exports = function (config) {
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity,
-        webpack: require('./webpack.test.config.js')
+        webpack: require('../../webpack.test.config.js')
     })
 }
